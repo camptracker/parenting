@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { styles, allTags } from './data'
 import type { ParentingStyle } from './data'
+import FriendshipSection from './FriendshipSection'
 import './App.css'
 
 function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen: boolean; onToggle: () => void }) {
@@ -80,6 +81,7 @@ function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen:
 }
 
 function App() {
+  const [activeSection, setActiveSection] = useState<'parenting' | 'friendship'>('parenting')
   const [openCards, setOpenCards] = useState<Set<string>>(new Set())
   const [search, setSearch] = useState('')
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set())
@@ -118,10 +120,17 @@ function App() {
   return (
     <div className="app">
       <header className="hero">
-        <h1>Parenting Styles Guide</h1>
-        <p className="subtitle">12 approaches compared — what works, what doesn't, and why</p>
+        <h1>{activeSection === 'parenting' ? 'Parenting Styles Guide' : 'The Friendship Guide'}</h1>
+        <p className="subtitle">{activeSection === 'parenting' ? '12 approaches compared — what works, what doesn\'t, and why' : 'Research-backed strategies for building & keeping real friendships'}</p>
+        <div className="section-toggle">
+          <button className={`section-btn ${activeSection === 'parenting' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('parenting')}>👶 Parenting</button>
+          <button className={`section-btn ${activeSection === 'friendship' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('friendship')}>🤝 Friendship</button>
+        </div>
       </header>
 
+      {activeSection === 'friendship' ? (
+        <FriendshipSection />
+      ) : (<>
       <div className="controls">
         <input
           type="search"
@@ -172,6 +181,7 @@ function App() {
         )}
       </main>
 
+      </>)}
       <footer>
         <p>Built with care · Not medical or professional advice · Sources include Baumrind, Sears, Montessori, Gerber, Nelsen, and others</p>
       </footer>
