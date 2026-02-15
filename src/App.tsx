@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { styles, allTags } from './data'
 import type { ParentingStyle } from './data'
 import FriendshipSection from './FriendshipSection'
+import RomanticSection from './RomanticSection'
 import './App.css'
 
 function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen: boolean; onToggle: () => void }) {
@@ -81,7 +82,7 @@ function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen:
 }
 
 function App() {
-  const [activeSection, setActiveSection] = useState<'parenting' | 'friendship'>('parenting')
+  const [activeSection, setActiveSection] = useState<'parenting' | 'friendship' | 'romantic'>('parenting')
   const [openCards, setOpenCards] = useState<Set<string>>(new Set())
   const [search, setSearch] = useState('')
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set())
@@ -120,16 +121,19 @@ function App() {
   return (
     <div className="app">
       <header className="hero">
-        <h1>{activeSection === 'parenting' ? 'Parenting Styles Guide' : 'The Friendship Guide'}</h1>
-        <p className="subtitle">{activeSection === 'parenting' ? '12 approaches compared — what works, what doesn\'t, and why' : 'Research-backed strategies for building & keeping real friendships'}</p>
+        <h1>{activeSection === 'parenting' ? 'Parenting Styles Guide' : activeSection === 'friendship' ? 'The Friendship Guide' : 'Romantic Relationships Guide'}</h1>
+        <p className="subtitle">{activeSection === 'parenting' ? '12 approaches compared — what works, what doesn\'t, and why' : activeSection === 'friendship' ? 'Research-backed strategies for building & keeping real friendships' : '9 dimensions of building and maintaining romantic love'}</p>
         <div className="section-toggle">
           <button className={`section-btn ${activeSection === 'parenting' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('parenting')}>👶 Parenting</button>
           <button className={`section-btn ${activeSection === 'friendship' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('friendship')}>🤝 Friendship</button>
+          <button className={`section-btn ${activeSection === 'romantic' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('romantic')}>💕 Romantic</button>
         </div>
       </header>
 
       {activeSection === 'friendship' ? (
         <FriendshipSection />
+      ) : activeSection === 'romantic' ? (
+        <RomanticSection />
       ) : (<>
       <div className="controls">
         <input
