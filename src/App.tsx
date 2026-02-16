@@ -3,6 +3,8 @@ import { styles, allTags } from './data'
 import type { ParentingStyle } from './data'
 import FriendshipSection from './FriendshipSection'
 import RomanticSection from './RomanticSection'
+import DisagreeSection from './DisagreeSection'
+import SecretsSectionComponent from './SecretsSection'
 import './App.css'
 
 function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen: boolean; onToggle: () => void }) {
@@ -82,7 +84,7 @@ function StyleCard({ style, isOpen, onToggle }: { style: ParentingStyle; isOpen:
 }
 
 function App() {
-  const [activeSection, setActiveSection] = useState<'parenting' | 'friendship' | 'romantic'>('parenting')
+  const [activeSection, setActiveSection] = useState<'parenting' | 'friendship' | 'romantic' | 'disagree' | 'secrets'>('parenting')
   const [openCards, setOpenCards] = useState<Set<string>>(new Set())
   const [search, setSearch] = useState('')
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set())
@@ -121,12 +123,14 @@ function App() {
   return (
     <div className="app">
       <header className="hero">
-        <h1>{activeSection === 'parenting' ? 'Parenting Styles Guide' : activeSection === 'friendship' ? 'The Friendship Guide' : 'Romantic Relationships Guide'}</h1>
-        <p className="subtitle">{activeSection === 'parenting' ? '12 approaches compared — what works, what doesn\'t, and why' : activeSection === 'friendship' ? 'Research-backed strategies for building & keeping real friendships' : '9 dimensions of building and maintaining romantic love'}</p>
+        <h1>{activeSection === 'parenting' ? 'Parenting Styles Guide' : activeSection === 'friendship' ? 'The Friendship Guide' : activeSection === 'romantic' ? 'Romantic Relationships Guide' : activeSection === 'disagree' ? 'Disagreeing Without Being Mean' : 'Keeping Secrets & Why It Matters'}</h1>
+        <p className="subtitle">{activeSection === 'parenting' ? '12 approaches compared — what works, what doesn\'t, and why' : activeSection === 'friendship' ? 'Research-backed strategies for building & keeping real friendships' : activeSection === 'romantic' ? '9 dimensions of building and maintaining romantic love' : activeSection === 'disagree' ? 'Research-backed techniques for holding your ground without scorching the earth' : 'The science of trust, the cost of gossip, and how to become the vault'}</p>
         <div className="section-toggle">
           <button className={`section-btn ${activeSection === 'parenting' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('parenting')}>👶 Parenting</button>
           <button className={`section-btn ${activeSection === 'friendship' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('friendship')}>🤝 Friendship</button>
           <button className={`section-btn ${activeSection === 'romantic' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('romantic')}>💕 Romantic</button>
+          <button className={`section-btn ${activeSection === 'disagree' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('disagree')}>🕊️ Disagreeing</button>
+          <button className={`section-btn ${activeSection === 'secrets' ? 'section-btn-active' : ''}`} onClick={() => setActiveSection('secrets')}>🤫 Secrets</button>
         </div>
       </header>
 
@@ -134,6 +138,10 @@ function App() {
         <FriendshipSection />
       ) : activeSection === 'romantic' ? (
         <RomanticSection />
+      ) : activeSection === 'disagree' ? (
+        <DisagreeSection />
+      ) : activeSection === 'secrets' ? (
+        <SecretsSectionComponent />
       ) : (<>
       <div className="controls">
         <input
