@@ -269,5 +269,40 @@ export const friendshipTopics: FriendshipTopic[] = [
     ],
     quote: "Between stimulus and response there is a space. In that space is our freedom and our power to choose our response.",
     quoteAuthor: "Viktor Frankl"
+  },
+  {
+    id: "keeping-secrets",
+    name: "Keeping Secrets & Why It Matters",
+    tagline: "Trust is built in drops and lost in buckets",
+    icon: "🤫",
+    color: "#6a5f8e",
+    overview: "When a friend confides in you, they're handing you something fragile — their trust. Research shows that the ability to keep confidences is the single most cited trait of a 'best friend' across cultures. Gossip feels good in the moment (it literally triggers dopamine), but the long-term cost is catastrophic: once you're known as someone who can't keep a secret, people stop telling you real things. And without real things, you don't have real friendships.",
+    keyInsights: [
+      "Trustworthiness is the #1 trait people look for in close friends — above humor, loyalty, or shared interests",
+      "Gossip activates the brain's reward system (dopamine hit), which is why it's so tempting — it's literally addictive",
+      "People who share others' secrets are subconsciously perceived as likely to share YOUR secrets too — trust erodes in all directions",
+      "The 'vault effect': being known as someone who keeps secrets makes people confide in you MORE, deepening all your friendships",
+      "Studies show it takes 5-10 positive trust-building interactions to recover from a single betrayal of confidence",
+      "There's a difference between secrets (someone's private info) and concerns (something that affects safety) — know which is which"
+    ],
+    practicalTips: [
+      "Default rule: if someone tells you something personal, assume it's private unless they explicitly say otherwise",
+      "When tempted to share gossip, ask: 'Would I say this if they were standing here?' If no, don't say it",
+      "Practice the redirect: when someone asks about a mutual friend's business, say 'That's their story to tell'",
+      "If you accidentally slip, own it immediately — tell the person whose secret it was before they hear it from someone else",
+      "Don't use someone's vulnerability against them later — in arguments, bringing up confided insecurities is a friendship death sentence",
+      "Create a personal rule: 'I don't repeat things told to me in confidence.' Say it out loud so friends know where you stand",
+      "If keeping a secret is weighing on you, talk to a therapist or journal — don't offload to another friend in the circle"
+    ],
+    watchOut: [
+      "The 'I only told ONE person' trap — that one person tells one person, and now everyone knows",
+      "Disguising gossip as concern: 'I'm just worried about them' while spilling their business",
+      "Vague-posting or hinting on social media — it's still a betrayal even without names",
+      "Trading secrets as social currency to feel included or important in a group",
+      "Assuming couples share everything — your friend told YOU, not their partner",
+      "The exception: if someone is in danger (self-harm, abuse), getting help is not betrayal — it's love"
+    ],
+    quote: "If you reveal your secrets to the wind, you should not blame the wind for revealing them to the trees.",
+    quoteAuthor: "Kahlil Gibran"
   }
 ];
