@@ -233,5 +233,41 @@ export const friendshipTopics: FriendshipTopic[] = [
     ],
     quote: "The friend who can be silent with us in a moment of despair or confusion, who can stay with us in an hour of grief, is the friend who cares.",
     quoteAuthor: "Henri Nouwen"
+  },
+  {
+    id: "disagree-kindly",
+    name: "Disagreeing Without Being Mean",
+    tagline: "You can hold your ground without scorching the earth",
+    icon: "🕊️",
+    color: "#5b8a72",
+    overview: "Disagreement is inevitable in any real friendship — and it's actually healthy. The problem isn't the disagreement itself, it's how we handle it. Research from the Gottman Institute shows that contempt (eye-rolling, sarcasm, dismissiveness) is the single biggest predictor of relationship destruction. The goal isn't to avoid conflict — it's to fight fair, stay curious, and protect the person even when you reject their idea.",
+    keyInsights: [
+      "Contempt — not anger — is the #1 relationship killer. Anger says 'I disagree.' Contempt says 'You're beneath me.'",
+      "The 'softened startup' matters: how you BEGIN a disagreement predicts how it ends 96% of the time (Gottman research)",
+      "Most arguments aren't about being right — they're about feeling heard. Address the emotion before the logic.",
+      "Your brain treats social rejection like physical pain (fMRI studies). A harsh word literally hurts.",
+      "People remember HOW you made them feel long after they forget WHAT the argument was about",
+      "'Steel-manning' (arguing the strongest version of their point before presenting yours) builds massive trust and respect"
+    ],
+    practicalTips: [
+      "Lead with curiosity: 'Help me understand why you see it that way' before launching your counterpoint",
+      "Use 'I' statements: 'I see it differently' hits completely different than 'You're wrong'",
+      "Separate the person from the position — attack the idea, never the character",
+      "Pause before responding when heated. A 6-second pause lets your prefrontal cortex catch up to your amygdala",
+      "Acknowledge what's valid in their view first, THEN share where you diverge",
+      "Name the shared goal: 'We both want X, we just disagree on how to get there'",
+      "If you catch yourself getting mean, stop and say 'Let me restart that — I came in too hot'",
+      "Know your exits: 'I need 10 minutes to cool down' is mature, not weak"
+    ],
+    watchOut: [
+      "Tone-policing: telling someone they're 'too emotional' instead of engaging with their point",
+      "Passive aggression disguised as politeness: 'No offense, but...' or 'I mean, if you really think that...'",
+      "Bringing up old arguments to 'win' the current one — stay on topic",
+      "Weaponizing silence — stonewalling is just aggression in a quieter font",
+      "Thinking 'I was just being honest' excuses cruelty — honesty and kindness aren't opposites",
+      "Competing to win instead of communicating to understand"
+    ],
+    quote: "Between stimulus and response there is a space. In that space is our freedom and our power to choose our response.",
+    quoteAuthor: "Viktor Frankl"
   }
 ];
